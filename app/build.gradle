@@ -17,7 +17,7 @@ android {
     compileSdkVersion rootProject.compileSdkVersion
     dataBinding.enabled = true
     defaultConfig {
-        applicationId "com.instory.latest.trending.viral.news"
+        applicationId "com.top.github"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         testInstrumentationRunner "com.instory.latest.util.AppTestRunner"

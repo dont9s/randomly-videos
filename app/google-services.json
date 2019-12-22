@@ -1,125 +1,53 @@
 {
   "project_info": {
-    "project_number": "1037242156791",
-    "firebase_url": "https://onelabs-2.firebaseio.com",
-    "project_id": "onelabs-2",
-    "storage_bucket": "onelabs-2.appspot.com"
+    "project_number": "1085905758544",
+    "firebase_url": "https://fplit-9e6a0.firebaseio.com",
+    "project_id": "fplit-9e6a0",
+    "storage_bucket": "fplit-9e6a0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1037242156791:android:679af1c73349dcb9",
+        "mobilesdk_app_id": "1:1085905758544:android:9a3f1e2a81df4e7b",
         "android_client_info": {
-          "package_name": "com.instory.latest.trending.viral.news"
+          "package_name": "com.example.nikhil.fplit"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1037242156791-44o4jgj29nnfibp4a2crct194679kjgc.apps.googleusercontent.com",
+          "client_id": "1085905758544-82anbncgq53vumfinfl380b8k98uj52q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.instory.latest.trending.viral.news",
-            "certificate_hash": "71370c948d9c072877f67839ccd66430b8c44f60"
-          }
-        },
-        {
-          "client_id": "1037242156791-7o6mkjh4v2108nm3t0smmmtknfshtlr7.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA_eME21rt5ShweRWyGL9irpy7Ek0zd4v4"
-        },
-        {
-          "current_key": "AIzaSyCu7_z5viPnqUKKJgT_iZzlCB18HSpbfxo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1037242156791-pnqr4g1220rf90b8of7bgidltmg9h1ag.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1037242156791:android:0ac535657edb396a",
-        "android_client_info": {
-          "package_name": "live.cricket.football.kabaddi.score.bet.news.watch"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1037242156791-89dvoekot7eq1s3k9q0d24j2ut9du28a.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "live.cricket.football.kabaddi.score.bet.news.watch",
-            "certificate_hash": "0bd8ba684b7bbeee48e63d1ef7f20b0d162c1492"
-          }
-        },
-        {
-          "client_id": "1037242156791-7o6mkjh4v2108nm3t0smmmtknfshtlr7.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA_eME21rt5ShweRWyGL9irpy7Ek0zd4v4"
-        },
-        {
-          "current_key": "AIzaSyCu7_z5viPnqUKKJgT_iZzlCB18HSpbfxo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1037242156791-pnqr4g1220rf90b8of7bgidltmg9h1ag.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1037242156791:android:8bb91af40adc47b0",
-        "android_client_info": {
-          "package_name": "live.cricket.football.kabaddi.score.bet.news.watch.game"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1037242156791-mrmueglr5e4oqldrstmr95dinucu4ukc.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "live.cricket.football.kabaddi.score.bet.news.watch.game",
+            "package_name": "com.example.nikhil.fplit",
             "certificate_hash": "7aee93d386c5f80602419c5d5f77c9a3228b082e"
           }
         },
         {
-          "client_id": "1037242156791-7o6mkjh4v2108nm3t0smmmtknfshtlr7.apps.googleusercontent.com",
+          "client_id": "1085905758544-7gqt6el6irrrsv31dlv7dm6ocpin1mi6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nikhil.fplit",
+            "certificate_hash": "d31e4cc63d89aace6dfc98f817c1ef63bc7b0c93"
+          }
+        },
+        {
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA_eME21rt5ShweRWyGL9irpy7Ek0zd4v4"
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
         },
         {
-          "current_key": "AIzaSyCu7_z5viPnqUKKJgT_iZzlCB18HSpbfxo"
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1037242156791-pnqr4g1220rf90b8of7bgidltmg9h1ag.apps.googleusercontent.com",
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -128,62 +56,62 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1037242156791:android:1eb598464839b653",
+        "mobilesdk_app_id": "1:1085905758544:android:03303d8b1bacc1c9",
         "android_client_info": {
-          "package_name": "order.food.online.delivery.offers.deals.india"
+          "package_name": "com.example.nikhil.waymate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1037242156791-24v1bqcrm71g03cv97ld4oro8n87fuc2.apps.googleusercontent.com",
+          "client_id": "1085905758544-f734o0psd9t260l24tco9tknmacvhvll.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.india",
-            "certificate_hash": "a3583c046218984cbd7ffa39389a46ddbbcc3c0c"
+            "package_name": "com.example.nikhil.waymate",
+            "certificate_hash": "9a719655052b8a2a0dbece07dfa562d2e348fbde"
           }
         },
         {
-          "client_id": "1037242156791-3qojrtb0jk5nj7082stj0vud65sjp4gv.apps.googleusercontent.com",
+          "client_id": "1085905758544-rhctliqadgqp6ffsuk9ae9s1dnc848bn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.india",
-            "certificate_hash": "0bd8ba684b7bbeee48e63d1ef7f20b0d162c1492"
+            "package_name": "com.example.nikhil.waymate",
+            "certificate_hash": "7aee93d386c5f80602419c5d5f77c9a3228b082e"
           }
         },
         {
-          "client_id": "1037242156791-dpg65vntp90t5ebjh7ndnje7ish15b5c.apps.googleusercontent.com",
+          "client_id": "1085905758544-asle9m8m26q0u5f9ot7qidb97i6jg1v3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.india",
+            "package_name": "com.example.nikhil.waymate",
             "certificate_hash": "5626ed65b283dbd58ccf45b9727f2262dffe47ad"
           }
         },
         {
-          "client_id": "1037242156791-eqv0bhh03qq97b1rlpbodr9394837d26.apps.googleusercontent.com",
+          "client_id": "1085905758544-5o4rvn6ue7om71mf1br6cqmoeufr7739.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.india",
-            "certificate_hash": "1233bbede7d053346447d233afc6d629785ae47f"
+            "package_name": "com.example.nikhil.waymate",
+            "certificate_hash": "57fe7722a1be2a2b17afde977f95ee4d01d7a965"
           }
         },
         {
-          "client_id": "1037242156791-7o6mkjh4v2108nm3t0smmmtknfshtlr7.apps.googleusercontent.com",
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA_eME21rt5ShweRWyGL9irpy7Ek0zd4v4"
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
         },
         {
-          "current_key": "AIzaSyCu7_z5viPnqUKKJgT_iZzlCB18HSpbfxo"
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1037242156791-pnqr4g1220rf90b8of7bgidltmg9h1ag.apps.googleusercontent.com",
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -192,142 +120,158 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1037242156791:android:7e4b7e8e36c82103daf5f2",
+        "mobilesdk_app_id": "1:1085905758544:android:b65913ee47da56db",
         "android_client_info": {
-          "package_name": "order.food.online.delivery.offers.deals.paid"
+          "package_name": "com.example.nikhil.waymate.driver"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1037242156791-nis1b7bc8t142mulsfps6mvihuegddtn.apps.googleusercontent.com",
+          "client_id": "1085905758544-1g401kpaj1kbrfuesj19hi66nknjf110.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.paid",
-            "certificate_hash": "35aa3d8cdc4ff8a036552a037b6455bc3fb3d407"
-          }
-        },
-        {
-          "client_id": "1037242156791-d9tjatqkt1umkji873uqs2re0mbvoqt4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.paid",
-            "certificate_hash": "37f47ddc31b68db7cc7cc40818ae7590b499c6d9"
-          }
-        },
-        {
-          "client_id": "1037242156791-9soqvolft67mamdmcdkbej9k7c8jjgg0.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.paid",
-            "certificate_hash": "1233bbede7d053346447d233afc6d629785ae47f"
-          }
-        },
-        {
-          "client_id": "1037242156791-7o6mkjh4v2108nm3t0smmmtknfshtlr7.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA_eME21rt5ShweRWyGL9irpy7Ek0zd4v4"
-        },
-        {
-          "current_key": "AIzaSyCu7_z5viPnqUKKJgT_iZzlCB18HSpbfxo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1037242156791-pnqr4g1220rf90b8of7bgidltmg9h1ag.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1037242156791:android:5a7b6a0ce9c927b3",
-        "android_client_info": {
-          "package_name": "order.food.online.delivery.offers.deals.usa"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1037242156791-kp3pvabdf6qeekjp2dcndgei1vm0hvhc.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.usa",
-            "certificate_hash": "6b827f96e520c54937a0f2c554b9d63afa24afbd"
-          }
-        },
-        {
-          "client_id": "1037242156791-jjm083jop9ggl3el55rjgjnq35m2tik5.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "order.food.online.delivery.offers.deals.usa",
-            "certificate_hash": "1233bbede7d053346447d233afc6d629785ae47f"
-          }
-        },
-        {
-          "client_id": "1037242156791-7o6mkjh4v2108nm3t0smmmtknfshtlr7.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA_eME21rt5ShweRWyGL9irpy7Ek0zd4v4"
-        },
-        {
-          "current_key": "AIzaSyCu7_z5viPnqUKKJgT_iZzlCB18HSpbfxo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1037242156791-pnqr4g1220rf90b8of7bgidltmg9h1ag.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1037242156791:android:7543c4ccf556d5a7daf5f2",
-        "android_client_info": {
-          "package_name": "scanner.doc.cam.document.scanner"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1037242156791-ono6v22pki3937mpmactvfsk2fgipm6k.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "scanner.doc.cam.document.scanner",
+            "package_name": "com.example.nikhil.waymate.driver",
             "certificate_hash": "7aee93d386c5f80602419c5d5f77c9a3228b082e"
           }
         },
         {
-          "client_id": "1037242156791-7o6mkjh4v2108nm3t0smmmtknfshtlr7.apps.googleusercontent.com",
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA_eME21rt5ShweRWyGL9irpy7Ek0zd4v4"
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
         },
         {
-          "current_key": "AIzaSyCu7_z5viPnqUKKJgT_iZzlCB18HSpbfxo"
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1037242156791-pnqr4g1220rf90b8of7bgidltmg9h1ag.apps.googleusercontent.com",
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085905758544:android:83de9cfcd424365c",
+        "android_client_info": {
+          "package_name": "com.sankhlatech.uberdriver.travel.gaddi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085905758544-vpu4f4tjc8d7gfotrej9lsf00pfv0dh3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sankhlatech.uberdriver.travel.gaddi",
+            "certificate_hash": "9a719655052b8a2a0dbece07dfa562d2e348fbde"
+          }
+        },
+        {
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
+        },
+        {
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085905758544:android:a83f72f31da57b9a512455",
+        "android_client_info": {
+          "package_name": "com.top.github"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085905758544-9u3etid7suofijpf4eavnvd47dojsioj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.top.github",
+            "certificate_hash": "7aee93d386c5f80602419c5d5f77c9a3228b082e"
+          }
+        },
+        {
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
+        },
+        {
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085905758544:android:81d93c236986ca49",
+        "android_client_info": {
+          "package_name": "driver.gobi.com.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085905758544-7asfskg5ic8oj4vpg6e97gtoal38hk8s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "driver.gobi.com.driver",
+            "certificate_hash": "04b571049e0aacb327cc73a9c3f38898f8831a01"
+          }
+        },
+        {
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
+        },
+        {
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

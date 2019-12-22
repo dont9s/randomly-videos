@@ -14,7 +14,7 @@
 
         <variable
             name="user"
-            type="com.instory.latest.trendingrepo.data.User" />
+            type="com.top.github.trendingrepo.data.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
