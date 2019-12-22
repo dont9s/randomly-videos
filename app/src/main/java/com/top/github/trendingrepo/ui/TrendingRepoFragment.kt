@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.top.github.R
 import com.top.github.data.Result
+import com.top.github.databinding.FragmentRepoBinding
 import com.top.github.di.Injectable
 import com.top.github.di.injectViewModel
 import com.top.github.ui.GridItemDecoration
+import com.top.github.ui.hide
+import com.top.github.ui.show
 import javax.inject.Inject
 
 class TrendingRepoFragment : Fragment(), Injectable {
