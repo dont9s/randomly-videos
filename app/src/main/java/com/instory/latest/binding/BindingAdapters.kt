@@ -1,12 +1,15 @@
 package com.instory.latest.binding
 
+import android.graphics.Bitmap
 import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.instory.latest.trending.viral.news.R
 import com.instory.latest.util.ImageManager
 import com.instory.latest.util.Utils
 
@@ -31,13 +34,24 @@ fun bindIsGone(view: FloatingActionButton, isGone: Boolean?) {
 
 @BindingAdapter("imageFromUrl")
 fun ImageView.bindImageFromUrl(imageUrl: String) {
-    val url = Utils.makeUrlHttps(imageUrl)
+    /* val url = Utils.makeUrlHttps(imageUrl)
 
-    val manager = ImageManager()
+     val manager = ImageManager(context)
+
+
+     manager.getBitmapFromDiskCache(url)?.also {
+         this.setImageBitmap(it)
+     }*/
+
+    Glide.with(context)
+            .load(imageUrl)
+            .into(this)
+/*
 
     manager.load(this.context,
             url,
             this)
+*/
 
 }
 

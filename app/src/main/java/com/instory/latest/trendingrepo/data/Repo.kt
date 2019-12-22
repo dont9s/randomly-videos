@@ -1,6 +1,7 @@
 package com.instory.latest.trendingrepo.data
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Repo(
         @field:SerializedName("name")
@@ -10,7 +11,7 @@ data class Repo(
         @field:SerializedName("url")
         val repoUrl: String? = null
 
-) {
+) : Serializable{
 
     override fun toString(): String = repoName!!
 }

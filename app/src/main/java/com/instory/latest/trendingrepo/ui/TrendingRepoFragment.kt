@@ -42,7 +42,7 @@ class TrendingRepoFragment : Fragment(), Injectable {
         binding = FragmentRepoBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        adapter = TrendingRepoAdapter(viewModel)
+        adapter = TrendingRepoAdapter(activity!!)
         layoutManager = GridLayoutManager(context, COLUMN_COUNT)
 
         binding.rvRepos.addItemDecoration(
