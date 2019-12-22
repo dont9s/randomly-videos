@@ -17,12 +17,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 @RunWith(JUnit4::class)
-class InstoryServiceTest {
+class TopGithubServiceTest {
     @Rule
     @JvmField
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    private lateinit var service: InstoryService
+    private lateinit var service: TopGithubService
 
     private lateinit var mockWebServer: MockWebServer
 
@@ -33,7 +33,7 @@ class InstoryServiceTest {
                 .baseUrl(mockWebServer.url(""))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(InstoryService::class.java)
+                .create(TopGithubService::class.java)
     }
 
     @After
@@ -45,7 +45,7 @@ class InstoryServiceTest {
     fun requestLegoSets() {
         runBlocking {
             enqueueResponse("legosets.json")
-            val resultResponse = service.getTopics().body()
+            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
 
             val request = mockWebServer.takeRequest()
             assertNotNull(resultResponse)
@@ -57,7 +57,7 @@ class InstoryServiceTest {
     fun getLegoSetsResponse() {
         runBlocking {
             enqueueResponse("legosets.json")
-            val resultResponse = service.getTopics().body()
+            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
             /*val legoSets = resultResponse!!.
 
             assertThat(resultResponse.count, `is`(9))
@@ -69,7 +69,7 @@ class InstoryServiceTest {
     fun getLegoSetsPagination() {
         runBlocking {
             enqueueResponse("legosets.json")
-            val resultResponse = service.getTopics().body()
+            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
 /*
             assertNull(resultResponse!!.next)
             assertNull(resultResponse.previous)*/
@@ -81,7 +81,7 @@ class InstoryServiceTest {
     fun getLegoSetItem() {
         runBlocking {
             enqueueResponse("legosets.json")
-            val resultResponse = service.getTopics().body()
+            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
           /*  val legoSets = resultResponse!!.results
 
             val legoSet = legoSets[0]
@@ -98,7 +98,7 @@ class InstoryServiceTest {
 
     private fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
         val inputStream = javaClass.classLoader
-                .getResourceAsStream("api-response/$fileName")
+                ?.getResourceAsStream("api-response/$fileName")
         val source = Okio.buffer(Okio.source(inputStream))
         val mockResponse = MockResponse()
         for ((key, value) in headers) {

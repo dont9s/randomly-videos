@@ -8,14 +8,14 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_topics"
+            android:id="@+id/rv_repos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:context=".MainActivity"
-            tools:listitem="@layout/list_item_topic" />
+            tools:listitem="@layout/list_item_repo" />
 
 
         <com.facebook.shimmer.ShimmerFrameLayout

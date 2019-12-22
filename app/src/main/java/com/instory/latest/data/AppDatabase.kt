@@ -8,21 +8,21 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.instory.latest.topic.data.Topic
-import com.instory.latest.topic.data.TopicDao
+import com.instory.latest.trendingrepo.data.TrendingRepoDao
+import com.instory.latest.trendingrepo.data.User
 import com.instory.latest.worker.SeedDatabaseWorker
 
 /**
  * The Room database for this app
  */
 @Database(entities = [
-    Topic::class],
+    User::class],
         version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
 
-    abstract fun topicDao(): TopicDao
+    abstract fun trendingRepoDao(): TrendingRepoDao
 
 
     companion object {
@@ -40,7 +40,7 @@ abstract class AppDatabase : RoomDatabase() {
         // Create and pre-populate the database. See this article for more details:
         // https://medium.com/google-developers/7-pro-tips-for-room-fbadea4bfbd1#4785
         private fun buildDatabase(context: Context): AppDatabase {
-            return Room.databaseBuilder(context, AppDatabase::class.java, "instory-db")
+            return Room.databaseBuilder(context, AppDatabase::class.java, "top-github-db")
                     .addCallback(object : RoomDatabase.Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)

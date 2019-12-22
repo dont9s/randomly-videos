@@ -2,11 +2,11 @@ package com.instory.latest.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.instory.latest.topic.data.TopicDao
+import com.instory.latest.trendingrepo.data.TrendingRepoDao
 import com.instory.latest.util.getValue
 import com.instory.latest.util.legoThemeId
-import com.instory.latest.util.testTopicA
-import com.instory.latest.util.testTopicB
+import com.instory.latest.util.testUserA
+import com.instory.latest.util.testUserB
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
@@ -17,9 +17,9 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class LegoSetDaoTest : DbTest() {
-    private lateinit var topicDao: TopicDao
-    private val setA = testTopicA.copy()
-    private val setB = testTopicB.copy()
+    private lateinit var topicDao: TrendingRepoDao
+    private val setA = testUserA.copy()
+    private val setB = testUserB.copy()
     private val themeId = legoThemeId
 
     @get:Rule
@@ -27,7 +27,7 @@ class LegoSetDaoTest : DbTest() {
 
     @Before
     fun createDb() {
-        topicDao = db.topicDao()
+        topicDao = db.trendingRepoDao()
 
         // Insert legoSets in non-alphabetical order to test that results are sorted by name
         runBlocking {
@@ -37,7 +37,7 @@ class LegoSetDaoTest : DbTest() {
 
     @Test
     fun testGetSets() {
-        val list = getValue(topicDao.getTopics())
+        val list = getValue(topicDao.getTrendingRepos())
         assertThat(list.size, equalTo(2))
 
         // Ensure legoSet list is sorted by name
@@ -47,6 +47,6 @@ class LegoSetDaoTest : DbTest() {
 
     @Test
     fun testGetLegoSet() {
-        assertThat(getValue(topicDao.getTopics()), equalTo(setA))
+        assertThat(getValue(topicDao.getTrendingRepos()), equalTo(setA))
     }
 }

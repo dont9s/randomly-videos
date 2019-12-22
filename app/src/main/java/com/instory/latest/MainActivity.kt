@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.instory.latest.trending.viral.news.databinding.ActivityMainBinding
-import com.instory.latest.topic.ui.TopicFragment
+import com.instory.latest.trendingrepo.ui.TrendingRepoFragment
 import com.instory.latest.trending.viral.news.R
-import com.instory.latest.util.Analytics
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this,
                 R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().add(R.id.fl_fragment, TopicFragment.getInstance()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.fl_fragment, TrendingRepoFragment.getInstance()).commit()
 
     }
 

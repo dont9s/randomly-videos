@@ -1,7 +1,7 @@
 package com.instory.latest.di
 
 
-import com.instory.latest.topic.ui.TopicFragment
+import com.instory.latest.trendingrepo.ui.TrendingRepoFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,6 +10,6 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeTopicFragment(): TopicFragment
+    abstract fun contributeTrendingRepoFragment(): TrendingRepoFragment
 
 }

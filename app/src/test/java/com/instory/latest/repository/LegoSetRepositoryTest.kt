@@ -1,11 +1,11 @@
 package com.instory.latest.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.instory.latest.api.InstoryService
+import com.instory.latest.api.TopGithubService
 import com.instory.latest.data.AppDatabase
-import com.instory.latest.topic.data.TopicDao
-import com.instory.latest.topic.data.TopicRemoteDataSource
-import com.instory.latest.topic.data.TopicRepository
+import com.instory.latest.trendingrepo.data.TrendingRepoDao
+import com.instory.latest.trendingrepo.data.TrendingRepoRemoteDataSource
+import com.instory.latest.trendingrepo.data.TrendingRepoRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -19,10 +19,10 @@ import org.mockito.Mockito.*
 
 @RunWith(JUnit4::class)
 class LegoSetRepositoryTest {
-    private lateinit var repository: TopicRepository
-    private val dao = mock(TopicDao::class.java)
-    private val service = mock(InstoryService::class.java)
-    private val remoteDataSource = TopicRemoteDataSource(service)
+    private lateinit var repository: TrendingRepoRepository
+    private val dao = mock(TrendingRepoDao::class.java)
+    private val service = mock(TopGithubService::class.java)
+    private val remoteDataSource = TrendingRepoRemoteDataSource(service)
     private val mockRemoteDataSource = spy(remoteDataSource)
 
     private val themeId = 456
@@ -35,9 +35,9 @@ class LegoSetRepositoryTest {
     @Before
     fun init() {
         val db = mock(AppDatabase::class.java)
-        `when`(db.topicDao()).thenReturn(dao)
+        `when`(db.trendingRepoDao()).thenReturn(dao)
         `when`(db.runInTransaction(ArgumentMatchers.any())).thenCallRealMethod()
-        repository = TopicRepository(dao, remoteDataSource)
+        repository = TrendingRepoRepository(dao, remoteDataSource)
     }
 
     @Test

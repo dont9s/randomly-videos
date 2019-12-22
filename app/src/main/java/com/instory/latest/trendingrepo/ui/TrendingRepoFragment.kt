@@ -1,10 +1,9 @@
-package com.instory.latest.topic.ui
+package com.instory.latest.trendingrepo.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,25 +13,25 @@ import com.instory.latest.data.Result
 import com.instory.latest.di.Injectable
 import com.instory.latest.di.injectViewModel
 import com.instory.latest.trending.viral.news.R
-import com.instory.latest.trending.viral.news.databinding.FragmentTopicBinding
+import com.instory.latest.trending.viral.news.databinding.FragmentRepoBinding
 import com.instory.latest.ui.GridItemDecoration
 import com.instory.latest.ui.hide
 import com.instory.latest.ui.show
 import javax.inject.Inject
 
-class TopicFragment : Fragment(), Injectable {
+class TrendingRepoFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: TopicViewModel
+    private lateinit var viewModel: TrendingRepoViewModel
     private lateinit var layoutManager: GridLayoutManager
-    private lateinit var binding: FragmentTopicBinding
-    private lateinit var adapter: TopicAdapter
+    private lateinit var binding: FragmentRepoBinding
+    private lateinit var adapter: TrendingRepoAdapter
 
     private val COLUMN_COUNT = 2
 
     companion object {
-        fun getInstance() = TopicFragment()
+        fun getInstance() = TrendingRepoFragment()
     }
 
 
@@ -40,16 +39,16 @@ class TopicFragment : Fragment(), Injectable {
 
         viewModel = injectViewModel(viewModelFactory)
 
-        binding = FragmentTopicBinding.inflate(inflater, container, false)
+        binding = FragmentRepoBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        adapter = TopicAdapter(viewModel)
+        adapter = TrendingRepoAdapter(viewModel)
         layoutManager = GridLayoutManager(context, COLUMN_COUNT)
 
-        binding.rvTopics.addItemDecoration(
+        binding.rvRepos.addItemDecoration(
                 GridItemDecoration(resources.getDimension(R.dimen.dimen_20).toInt(), true))
-        binding.rvTopics.layoutManager = layoutManager
-        binding.rvTopics.adapter = adapter
+        binding.rvRepos.layoutManager = layoutManager
+        binding.rvRepos.adapter = adapter
 
 
         subscribeUi(binding, adapter)
@@ -60,8 +59,8 @@ class TopicFragment : Fragment(), Injectable {
     }
 
 
-    private fun subscribeUi(binding: FragmentTopicBinding, adapter: TopicAdapter) {
-        viewModel.topics.observe(viewLifecycleOwner, Observer { result ->
+    private fun subscribeUi(binding: FragmentRepoBinding, adapter: TrendingRepoAdapter) {
+        viewModel.trendingRepos.observe(viewLifecycleOwner, Observer { result ->
             when (result.status) {
                 Result.Status.SUCCESS -> {
                     binding.loadingShimmer.hide()
