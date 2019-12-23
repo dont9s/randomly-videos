@@ -40,11 +40,19 @@
                 android:scaleType="fitXY"
                 app:imageFromUrl="@{user.avatar}" />
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/gradient_bg"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_normal"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:text="@{user.username}"
                 android:textAppearance="?attr/textAppearanceHeadline6"
@@ -53,15 +61,16 @@
 
             <TextView
                 android:id="@+id/repo_name"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_margin="@dimen/margin_normal"
                 android:gravity="center"
-                android:layout_gravity="center"
                 android:text="@{user.repo.repoName}"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 tools:text="Super Heroes" />
-
+            </LinearLayout>
 
 
         </androidx.cardview.widget.CardView>
