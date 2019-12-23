@@ -5,6 +5,8 @@ import com.top.github.trendingrepo.data.TrendingRepoRepository
 import com.top.github.trendingrepo.ui.TrendingRepoViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import org.hamcrest.core.IsNull.nullValue
+import org.junit.Assert.assertThat
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -12,7 +14,7 @@ import org.junit.runners.JUnit4
 import org.mockito.Mockito.mock
 
 @RunWith(JUnit4::class)
-class LegoSetViewModelTest {
+class TrendingRepoViewModelTest {
 
     private val themeId = 567
 
@@ -27,24 +29,9 @@ class LegoSetViewModelTest {
 
     @Test
     fun testNull() {
-    /*    assertThat(viewModel.themeId, nullValue())
-        assertThat(viewModel.connectivityAvailable, notNullValue())
-        verify(repository, never()).observePagedSets(false, themeId, coroutineScope)
-        verify(repository, never()).observePagedSets(true, themeId, coroutineScope)*/
+        assertThat(viewModel.trendingRepos, nullValue())
+
     }
 
-    @Test
-    fun doNotFetchWithoutObservers() {
-    /*    viewModel.themeId = themeId
-        verify(repository, never()).observePagedSets(false, themeId, coroutineScope)*/
-    }
-
-    @Test
-    fun doNotFetchWithoutObserverOnConnectionChange() {
-        /*viewModel.themeId = themeId
-        viewModel.connectivityAvailable = true
-
-        verify(repository, never()).observePagedSets(true, themeId, coroutineScope)*/
-    }
 
 }

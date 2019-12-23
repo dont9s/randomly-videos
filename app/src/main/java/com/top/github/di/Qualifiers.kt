@@ -4,7 +4,7 @@ import javax.inject.Qualifier
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
-annotation class LegoAPI
+annotation class RepoApi
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 /**
- * Lego REST API access points
+ * Repo REST API access points
  */
 interface TopGithubService {
 

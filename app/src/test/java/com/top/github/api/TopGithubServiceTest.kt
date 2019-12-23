@@ -30,7 +30,7 @@ class TopGithubServiceTest {
     fun createService() {
         mockWebServer = MockWebServer()
         service = Retrofit.Builder()
-                .baseUrl(mockWebServer.url(""))
+                .baseUrl(mockWebServer.url("https://github-trending-api.now.sh/"))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(TopGithubService::class.java)
@@ -42,57 +42,38 @@ class TopGithubServiceTest {
     }
 
     @Test
-    fun requestLegoSets() {
+    fun checkResponseNotNull() {
         runBlocking {
-            enqueueResponse("legosets.json")
+            enqueueResponse("trendingrepos.json")
             val resultResponse = service.getTrendingRepositories("java", "weekly").body()
 
             val request = mockWebServer.takeRequest()
             assertNotNull(resultResponse)
-            assertThat(request.path, `is`("/lego/sets/"))
         }
     }
 
     @Test
-    fun getLegoSetsResponse() {
+    fun checkResponseSize() {
         runBlocking {
-            enqueueResponse("legosets.json")
+            enqueueResponse("trendingrepos.json")
             val resultResponse = service.getTrendingRepositories("java", "weekly").body()
-            /*val legoSets = resultResponse!!.
 
-            assertThat(resultResponse.count, `is`(9))
-            assertThat(legoSets.size, `is`(9))*/
-        }
-    }
 
-    @Test
-    fun getLegoSetsPagination() {
-        runBlocking {
-            enqueueResponse("legosets.json")
-            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
-/*
-            assertNull(resultResponse!!.next)
-            assertNull(resultResponse.previous)*/
+            assertThat(resultResponse?.size, `is`(25))
         }
     }
 
 
     @Test
-    fun getLegoSetItem() {
+    fun checkUser() {
         runBlocking {
-            enqueueResponse("legosets.json")
+            enqueueResponse("trendingrepos.json")
             val resultResponse = service.getTrendingRepositories("java", "weekly").body()
-          /*  val legoSets = resultResponse!!.results
+            val response = resultResponse?.get(0)
 
-            val legoSet = legoSets[0]
-            assertThat(legoSet.id, `is`("30212-1"))
-            assertThat(legoSet.name, `is`("Mirkwood Elf Guard"))
-            assertThat(legoSet.year, `is`(2012))
-            assertThat(legoSet.themeId, `is`(563))
-            assertThat(legoSet.numParts, `is`(27))
-            assertThat(legoSet.imageUrl, `is`("https://cdn.rebrickable.com/media/sets/30212-1.jpg"))
-            assertThat(legoSet.url, `is`("https://rebrickable.com/sets/30212-1/mirkwood-elf-guard/"))
-            assertThat(legoSet.lastModifiedDate, `is`("2016-04-23T12:25:04.325081Z"))*/
+            assertThat(response?.username, `is`("natario1"))
+            assertThat(response?.name, `is`("Mattia Iavarone"))
+
         }
     }
 

@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.top.github.trendingrepo.data.TrendingRepoDao
 import com.top.github.util.getValue
-import com.top.github.util.legoThemeId
 import com.top.github.util.testUserA
 import com.top.github.util.testUserB
 import kotlinx.coroutines.runBlocking
@@ -16,37 +15,30 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class LegoSetDaoTest : DbTest() {
-    private lateinit var topicDao: TrendingRepoDao
+class TrendingRepoDaoTest : DbTest() {
+    private lateinit var trendingRepoDao: TrendingRepoDao
     private val setA = testUserA.copy()
     private val setB = testUserB.copy()
-    private val themeId = legoThemeId
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Before
     fun createDb() {
-        topicDao = db.trendingRepoDao()
+        trendingRepoDao = db.trendingRepoDao()
 
-        // Insert legoSets in non-alphabetical order to test that results are sorted by name
         runBlocking {
-            topicDao.insertAll(listOf(setA, setB))
+            trendingRepoDao.insertAll(listOf(setA, setB))
         }
     }
 
     @Test
     fun testGetSets() {
-        val list = getValue(topicDao.getTrendingRepos())
+        val list = getValue(trendingRepoDao.getTrendingRepos())
         assertThat(list.size, equalTo(2))
 
-        // Ensure legoSet list is sorted by name
         assertThat(list[0], equalTo(setA))
         assertThat(list[1], equalTo(setB))
     }
 
-    @Test
-    fun testGetLegoSet() {
-        assertThat(getValue(topicDao.getTrendingRepos()), equalTo(setA))
-    }
 }

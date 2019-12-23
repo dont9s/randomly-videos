@@ -19,12 +19,12 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideTopGithubService(@LegoAPI okhttpClient: OkHttpClient,
+    fun provideTopGithubService(@RepoApi okhttpClient: OkHttpClient,
                                 converterFactory: GsonConverterFactory
     ) = provideService(okhttpClient, converterFactory, TopGithubService::class.java)
 
 
-    @LegoAPI
+    @RepoApi
     @Provides
     fun providePrivateOkHttpClient(
             upstreamClient: OkHttpClient

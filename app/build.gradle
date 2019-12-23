@@ -10,7 +10,7 @@ apply plugin: 'io.fabric'
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
-    annotation 'com.instory.latest.testing.OpenClass'
+    annotation 'com.top.github.testing.OpenClass'
 }
 
 android {
@@ -20,7 +20,7 @@ android {
         applicationId "com.top.github"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        testInstrumentationRunner "com.instory.latest.util.AppTestRunner"
+        testInstrumentationRunner "com.top.github.util.AppTestRunner"
         versionCode 1
         versionName "1"
         vectorDrawables.useSupportLibrary true
