@@ -8,6 +8,8 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import com.top.github.trendingrepo.data.Image
+import com.top.github.trendingrepo.data.ImageDao
 import com.top.github.trendingrepo.data.TrendingRepoDao
 import com.top.github.trendingrepo.data.User
 import com.top.github.worker.SeedDatabaseWorker
@@ -16,14 +18,14 @@ import com.top.github.worker.SeedDatabaseWorker
  * The Room database for this app
  */
 @Database(entities = [
-    User::class],
+    User::class, Image::class],
         version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
 
     abstract fun trendingRepoDao(): TrendingRepoDao
-
+    abstract fun imageDao(): ImageDao
 
     companion object {
 

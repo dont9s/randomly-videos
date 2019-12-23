@@ -62,7 +62,7 @@ class ImageManager {
                 val input: InputStream = connection.inputStream
 
 
-                val key: String = md5(p0[0])
+                val key: String = Utils.md5(p0[0])
 
 
                 val file = File(cacheDir, key)
@@ -95,7 +95,7 @@ class ImageManager {
 
     fun getBitmapFromDiskCache(url: String): Bitmap? {
 
-        val key = md5(url)
+        val key = Utils.md5(url)
         val file = File(cacheDir.absolutePath + key)
         var bitmap: Bitmap? = null
 
@@ -197,18 +197,5 @@ class ImageManager {
         return inSampleSize
     }
 
-    fun md5(s: String): String {
-        try { // Create MD5 Hash
-            val digest = MessageDigest.getInstance("MD5")
-            digest.update(s.toByteArray())
-            val messageDigest = digest.digest()
-            // Create Hex String
-            val hexString = StringBuffer()
-            for (i in messageDigest.indices) hexString.append(Integer.toHexString(0xFF and messageDigest[i].toInt()))
-            return hexString.toString()
-        } catch (e: NoSuchAlgorithmException) {
-            e.printStackTrace()
-        }
-        return ""
-    }
+
 }

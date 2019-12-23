@@ -1,5 +1,7 @@
 package com.top.github.binding
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.ImageView
@@ -9,6 +11,13 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.top.github.R
+import com.top.github.data.AppDatabase
+import com.top.github.data.KeyedBitmap
+import com.top.github.trendingrepo.data.Image
+import com.top.github.util.BitmapDiskCache
+import com.top.github.util.Utils
+import kotlinx.coroutines.*
+import java.util.logging.Handler
 
 
 @BindingAdapter("isGone")
@@ -40,9 +49,74 @@ fun ImageView.bindImageFromUrl(imageUrl: String) {
          this.setImageBitmap(it)
      }*/
 
-    Glide.with(context)
+    /*Glide.with(context)
             .load(imageUrl)
-            .into(this)
+            .into(this)*/
+
+    val database = AppDatabase.getInstance(context)
+
+
+    runBlocking(Dispatchers.IO) {
+        val res = async { database.imageDao().getImageByKey(Utils.md5(imageUrl)) }
+
+        val image = res.await()
+
+
+        if (image != null) {
+            //   image exist
+            val byteArray = image.array
+
+            val bitmap = byteArray?.size?.let { BitmapFactory.decodeByteArray(byteArray, 0, it) }
+
+            if (bitmap != null && bitmap.isRecycled)
+                return@runBlocking
+            this@bindImageFromUrl.setImageBitmap(bitmap)
+
+        } else {
+            //load image add to room and set to bitmap
+
+
+            val res = async { Utils.httpGetBitmap(imageUrl) }
+
+
+            val bitmap = res.await()
+
+            val image = Image(Utils.md5(imageUrl), Utils.getByteArrayFromBitmap(bitmap))
+
+            database.imageDao().insertImage(image)
+
+
+            if (bitmap != null && bitmap.isRecycled)
+                return@runBlocking
+            this@bindImageFromUrl.setImageBitmap(bitmap)
+
+
+        }
+
+        /*val keyedBitmap = KeyedBitmap(bitmap, imageUrl)
+        cache.add(keyedBitmap, object : BitmapDiskCache.EncodingCallback {
+            override fun done(key: String?) {
+
+            }
+
+        })*/
+    }
+
+
+//    val cache = BitmapDiskCache(context)
+
+    /* cache[imageUrl, object : BitmapDiskCache.DecodingCallback {
+         override fun done(bitmap: Bitmap?) {
+             if (bitmap != null)
+                 this@bindImageFromUrl.setImageBitmap(bitmap)
+             else {
+
+             }
+         }
+
+     }]*/
+
+
 /*
 
     manager.load(this.context,
