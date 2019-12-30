@@ -10,17 +10,17 @@ apply plugin: 'io.fabric'
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
-    annotation 'com.top.github.testing.OpenClass'
+    annotation 'com.randomly.videos.testing.OpenClass'
 }
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
     dataBinding.enabled = true
     defaultConfig {
-        applicationId "com.top.github"
+        applicationId "com.randomly.videos"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        testInstrumentationRunner "com.top.github.util.AppTestRunner"
+        testInstrumentationRunner "com.randomly.videos.util.AppTestRunner"
         versionCode 1
         versionName "1"
         vectorDrawables.useSupportLibrary true

@@ -160,6 +160,86 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:1085905758544:android:cf21420c1fa49dcd512455",
+        "android_client_info": {
+          "package_name": "com.google.firebase.samples.apps.mlkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085905758544-qkek5lmhsvectch7hqes0vk1qaoahdjb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.samples.apps.mlkit",
+            "certificate_hash": "7aee93d386c5f80602419c5d5f77c9a3228b082e"
+          }
+        },
+        {
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
+        },
+        {
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085905758544:android:40060afbd731b46a512455",
+        "android_client_info": {
+          "package_name": "com.randomly.videos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085905758544-27ep9n9oj9r88oak7m5p1oimfs37ehh6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.randomly.videos",
+            "certificate_hash": "7aee93d386c5f80602419c5d5f77c9a3228b082e"
+          }
+        },
+        {
+          "client_id": "1085905758544-juedifautsr7m4rvrf0opbdhsbhci1r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkD-l4nkI-Sj1ZYHQz-QB-0rIfOb-MwkM"
+        },
+        {
+          "current_key": "AIzaSyABWSo-V8Rs_wSjx6MKExgQtYMTjAEfQ8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085905758544-djjclivna7cl5jirs34hbcf4epictok4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:1085905758544:android:83de9cfcd424365c",
         "android_client_info": {
           "package_name": "com.sankhlatech.uberdriver.travel.gaddi"

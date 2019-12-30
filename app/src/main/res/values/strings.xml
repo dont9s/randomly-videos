@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Resources that do not require translation -->
-    <string name="app_name" translatable="false">Top Github</string>
+    <string name="app_name" translatable="false">Randomly Videos</string>
 
 
 
