@@ -15,6 +15,8 @@ import com.randomly.videos.databinding.FragmentRepoBinding
 import com.randomly.videos.di.Injectable
 import com.randomly.videos.di.injectViewModel
 import com.randomly.videos.ui.GridItemDecoration
+import com.randomly.videos.ui.hide
+import com.randomly.videos.ui.show
 import javax.inject.Inject
 
 class TrendingRepoFragment : Fragment(), Injectable {
