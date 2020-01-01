@@ -19,19 +19,19 @@ import com.randomly.videos.ui.hide
 import com.randomly.videos.ui.show
 import javax.inject.Inject
 
-class TrendingRepoFragment : Fragment(), Injectable {
+class VideoPostsFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: TrendingRepoViewModel
+    private lateinit var viewModel: VideoPostsViewModel
     private lateinit var layoutManager: GridLayoutManager
     private lateinit var binding: FragmentRepoBinding
-    private lateinit var adapter: TrendingRepoAdapter
+    private lateinit var adapter: PostAdapter
 
     private val COLUMN_COUNT = 2
 
     companion object {
-        fun getInstance() = TrendingRepoFragment()
+        fun getInstance() = VideoPostsFragment()
     }
 
 
@@ -42,7 +42,7 @@ class TrendingRepoFragment : Fragment(), Injectable {
         binding = FragmentRepoBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        adapter = TrendingRepoAdapter(activity!!)
+        adapter = PostAdapter(activity!!)
         layoutManager = GridLayoutManager(context, COLUMN_COUNT)
 
         binding.rvRepos.addItemDecoration(
@@ -59,8 +59,8 @@ class TrendingRepoFragment : Fragment(), Injectable {
     }
 
 
-    private fun subscribeUi(binding: FragmentRepoBinding, adapter: TrendingRepoAdapter) {
-        viewModel.trendingRepos.observe(viewLifecycleOwner, Observer { result ->
+    private fun subscribeUi(binding: FragmentRepoBinding, adapter: PostAdapter) {
+        viewModel.posts.observe(viewLifecycleOwner, Observer { result ->
             when (result.status) {
                 Result.Status.SUCCESS -> {
                     binding.loadingShimmer.hide()

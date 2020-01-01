@@ -10,7 +10,7 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.randomly.videos.trendingrepo.data.Image
 import com.randomly.videos.trendingrepo.data.ImageDao
-import com.randomly.videos.trendingrepo.data.TrendingRepoDao
+import com.randomly.videos.trendingrepo.data.PostDao
 import com.randomly.videos.trendingrepo.data.User
 import com.randomly.videos.worker.SeedDatabaseWorker
 
@@ -24,7 +24,7 @@ import com.randomly.videos.worker.SeedDatabaseWorker
 abstract class AppDatabase : RoomDatabase() {
 
 
-    abstract fun trendingRepoDao(): TrendingRepoDao
+    abstract fun trendingRepoDao(): PostDao
     abstract fun imageDao(): ImageDao
 
     companion object {

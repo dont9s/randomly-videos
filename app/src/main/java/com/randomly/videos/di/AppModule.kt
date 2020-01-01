@@ -2,7 +2,7 @@ package com.randomly.videos.di
 
 import android.app.Application
 import com.randomly.videos.api.AuthInterceptor
-import com.randomly.videos.api.TopGithubService
+import com.randomly.videos.api.RandmolyApiSerivice
 import com.randomly.videos.data.AppDatabase
 import com.randomly.videos.BuildConfig
 import dagger.Module
@@ -19,9 +19,9 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideTopGithubService(@RepoApi okhttpClient: OkHttpClient,
-                                converterFactory: GsonConverterFactory
-    ) = provideService(okhttpClient, converterFactory, TopGithubService::class.java)
+    fun provideRandomlyApiService(@RepoApi okhttpClient: OkHttpClient,
+                                  converterFactory: GsonConverterFactory
+    ) = provideService(okhttpClient, converterFactory, RandmolyApiSerivice::class.java)
 
 
     @RepoApi
@@ -53,7 +53,7 @@ class AppModule {
             converterFactory: GsonConverterFactory
     ): Retrofit {
         return Retrofit.Builder()
-                .baseUrl(TopGithubService.ENDPOINT)
+                .baseUrl(RandmolyApiSerivice.ENDPOINT)
                 .client(okhttpClient)
                 .addConverterFactory(converterFactory)
                 .build()

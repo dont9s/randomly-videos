@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.randomly.videos.databinding.ActivityMainBinding
-import com.randomly.videos.trendingrepo.ui.TrendingRepoFragment
+import com.randomly.videos.trendingrepo.ui.VideoPostsFragment
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 R.layout.activity_main)
 
         supportFragmentManager.beginTransaction().add(R.id.fl_fragment,
-                TrendingRepoFragment.getInstance())
+                VideoPostsFragment.getInstance())
                 .commit()
 
     }

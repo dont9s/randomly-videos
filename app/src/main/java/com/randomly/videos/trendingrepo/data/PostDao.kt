@@ -7,13 +7,13 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
-interface TrendingRepoDao {
+interface PostDao {
 
-    @Query("SELECT * FROM users ")
-    fun getTrendingRepos(): LiveData<List<User>>
+    @Query("SELECT * FROM posts ")
+    fun getPosts(): LiveData<List<Post>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(users: List<User>)
+    suspend fun insertAll(posts: List<Post>)
 
 
 }

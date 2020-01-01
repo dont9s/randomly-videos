@@ -1,8 +1,8 @@
 package com.randomly.videos.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.randomly.videos.trendingrepo.data.TrendingRepoRepository
-import com.randomly.videos.trendingrepo.ui.TrendingRepoViewModel
+import com.randomly.videos.trendingrepo.data.VideoPostRepository
+import com.randomly.videos.trendingrepo.ui.VideoPostsViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import org.hamcrest.core.IsNull.nullValue
@@ -14,7 +14,7 @@ import org.junit.runners.JUnit4
 import org.mockito.Mockito.mock
 
 @RunWith(JUnit4::class)
-class TrendingRepoViewModelTest {
+class VideoPostsViewModelTest {
 
     private val themeId = 567
 
@@ -24,12 +24,12 @@ class TrendingRepoViewModelTest {
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
-    private val repository = mock(TrendingRepoRepository::class.java)
-    private var viewModel = TrendingRepoViewModel(repository)
+    private val repository = mock(VideoPostRepository::class.java)
+    private var viewModel = VideoPostsViewModel(repository)
 
     @Test
     fun testNull() {
-        assertThat(viewModel.trendingRepos, nullValue())
+        assertThat(viewModel.posts, nullValue())
 
     }
 

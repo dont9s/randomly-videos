@@ -12,7 +12,7 @@ import com.randomly.videos.R
 import com.randomly.videos.databinding.ListItemRepoBinding
 import com.randomly.videos.trendingrepo.data.User
 
-class TrendingRepoAdapter(val activity: FragmentActivity) : ListAdapter<User, TrendingRepoAdapter.ViewHolder>(DiffCallback()) {
+class PostAdapter(val activity: FragmentActivity) : ListAdapter<User, PostAdapter.ViewHolder>(DiffCallback()) {
 
 
     class ViewHolder(

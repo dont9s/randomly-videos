@@ -17,12 +17,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 @RunWith(JUnit4::class)
-class TopGithubServiceTest {
+class RandmolyApiSeriviceTest {
     @Rule
     @JvmField
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    private lateinit var service: TopGithubService
+    private lateinit var service: RandmolyApiSerivice
 
     private lateinit var mockWebServer: MockWebServer
 
@@ -33,7 +33,7 @@ class TopGithubServiceTest {
                 .baseUrl(mockWebServer.url("https://github-trending-api.now.sh/"))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(TopGithubService::class.java)
+                .create(RandmolyApiSerivice::class.java)
     }
 
     @After
@@ -45,7 +45,7 @@ class TopGithubServiceTest {
     fun checkResponseNotNull() {
         runBlocking {
             enqueueResponse("trendingrepos.json")
-            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
+            val resultResponse = service.getVideoPosts("java", "weekly").body()
 
             val request = mockWebServer.takeRequest()
             assertNotNull(resultResponse)
@@ -56,7 +56,7 @@ class TopGithubServiceTest {
     fun checkResponseSize() {
         runBlocking {
             enqueueResponse("trendingrepos.json")
-            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
+            val resultResponse = service.getVideoPosts("java", "weekly").body()
 
 
             assertThat(resultResponse?.size, `is`(25))
@@ -68,7 +68,7 @@ class TopGithubServiceTest {
     fun checkUser() {
         runBlocking {
             enqueueResponse("trendingrepos.json")
-            val resultResponse = service.getTrendingRepositories("java", "weekly").body()
+            val resultResponse = service.getVideoPosts("java", "weekly").body()
             val response = resultResponse?.get(0)
 
             assertThat(response?.username, `is`("natario1"))
