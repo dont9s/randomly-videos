@@ -1,6 +1,7 @@
 package com.randomly.videos.trendingrepo.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,9 +62,12 @@ class VideoPostsFragment : Fragment(), Injectable {
 
     private fun subscribeUi(binding: FragmentRepoBinding, adapter: PostAdapter) {
         viewModel.posts.observe(viewLifecycleOwner, Observer { result ->
+
+
             when (result.status) {
                 Result.Status.SUCCESS -> {
                     binding.loadingShimmer.hide()
+
                     result.data?.let { adapter.submitList(it) }
                 }
                 Result.Status.LOADING -> binding.loadingShimmer.show()

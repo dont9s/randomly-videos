@@ -8,7 +8,7 @@ import java.io.Serializable
 
 @Entity(tableName = "posts")
 data class Post(
-        @PrimaryKey
+
         @field:SerializedName("id")
         val id: String,
 
@@ -16,6 +16,7 @@ data class Post(
         val thumbnailImage: String? = null,
         @field:SerializedName("event_name")
         val eventName: String? = null,
+        @PrimaryKey
         @field:SerializedName("event_date")
         val eventDate: Long? = null,
         @field:SerializedName("views")
@@ -28,6 +29,6 @@ data class Post(
         val shares: Int? = null) : Serializable {
 
 
-    override fun toString() = id
+    override fun toString() = id + likes + eventDate
 
 }

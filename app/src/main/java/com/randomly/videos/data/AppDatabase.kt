@@ -8,17 +8,15 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.randomly.videos.trendingrepo.data.Image
-import com.randomly.videos.trendingrepo.data.ImageDao
-import com.randomly.videos.trendingrepo.data.PostDao
-import com.randomly.videos.trendingrepo.data.User
+import com.randomly.videos.trendingrepo.data.*
 import com.randomly.videos.worker.SeedDatabaseWorker
 
 /**
  * The Room database for this app
  */
 @Database(entities = [
-    User::class, Image::class],
+    User::class, Image::class,
+    Post::class],
         version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {

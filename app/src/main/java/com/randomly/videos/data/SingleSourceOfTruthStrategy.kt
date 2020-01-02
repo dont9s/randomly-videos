@@ -1,5 +1,6 @@
 package com.randomly.videos.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
@@ -25,6 +26,7 @@ fun <T, A> resultLiveData(databaseQuery: () -> LiveData<T>,
 
             val responseStatus = networkCall.invoke()
             if (responseStatus.status == SUCCESS) {
+
                 saveCallResult(responseStatus.data!!)
             } else if (responseStatus.status == ERROR) {
                 emit(Result.error<T>(responseStatus.message!!))

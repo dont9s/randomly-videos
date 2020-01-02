@@ -10,19 +10,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.randomly.videos.repodetail.ui.RepoDetailFragment
 import com.randomly.videos.R
 import com.randomly.videos.databinding.ListItemRepoBinding
+import com.randomly.videos.trendingrepo.data.Post
 import com.randomly.videos.trendingrepo.data.User
 
-class PostAdapter(val activity: FragmentActivity) : ListAdapter<User, PostAdapter.ViewHolder>(DiffCallback()) {
+class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapter.ViewHolder>(DiffCallback()) {
 
 
     class ViewHolder(
             val binding: ListItemRepoBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(listener: View.OnClickListener, item: User) {
+        fun bind(listener: View.OnClickListener, item: Post) {
             binding.apply {
                 clickListener = listener
-                user = item
+                post = item
                 executePendingBindings()
             }
         }
@@ -34,35 +35,35 @@ class PostAdapter(val activity: FragmentActivity) : ListAdapter<User, PostAdapte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val user = getItem(position)
+        val post = getItem(position)
         holder.apply {
-            bind(createOnClickListener(user, holder.binding), user)
-            itemView.tag = user
+            bind(createOnClickListener(post, holder.binding), post)
+            itemView.tag = post
         }
     }
 
-    private fun createOnClickListener(user: User,
+    private fun createOnClickListener(post: Post,
                                       binding: ListItemRepoBinding): View.OnClickListener {
 
         return View.OnClickListener {
-
+/*
             activity.supportFragmentManager.beginTransaction().replace(R.id.fl_fragment,
                     RepoDetailFragment.getInstance(user))
                     .addToBackStack(null)
-                    .commit()
+                    .commit()*/
 
         }
     }
 }
 
 
-private class DiffCallback : DiffUtil.ItemCallback<User>() {
+private class DiffCallback : DiffUtil.ItemCallback<Post>() {
 
-    override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
-        return oldItem.username == newItem.username
+    override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
+        return oldItem.eventDate == newItem.eventDate
     }
 
-    override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
+    override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean {
         return oldItem == newItem
     }
 }

@@ -10,7 +10,10 @@ class VideoPostRepository @Inject constructor(private val dao: PostDao,
     val posts = resultLiveData(
             databaseQuery = { dao.getPosts() },
             networkCall = { remoteSource.fetchData() },
-            saveCallResult = { dao.insertAll(it) })
+            saveCallResult = {
+
+                dao.insertAll(it.postList)
+            })
 
 
 }

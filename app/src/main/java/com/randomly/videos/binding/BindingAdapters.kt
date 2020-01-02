@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.randomly.videos.data.AppDatabase
 import com.randomly.videos.trendingrepo.data.Image
@@ -43,11 +44,11 @@ fun ImageView.bindImageFromUrl(imageUrl: String) {
          this.setImageBitmap(it)
      }*/
 
-    /*Glide.with(context)
+    Glide.with(context)
             .load(imageUrl)
-            .into(this)*/
+            .into(this)
 
-    val database = AppDatabase.getInstance(context)
+    /*val database = AppDatabase.getInstance(context)
 
 
     runBlocking(Dispatchers.IO) {
@@ -87,14 +88,14 @@ fun ImageView.bindImageFromUrl(imageUrl: String) {
 
         }
 
-        /*val keyedBitmap = KeyedBitmap(bitmap, imageUrl)
+        *//*val keyedBitmap = KeyedBitmap(bitmap, imageUrl)
         cache.add(keyedBitmap, object : BitmapDiskCache.EncodingCallback {
             override fun done(key: String?) {
 
             }
 
-        })*/
-    }
+        })*//*
+    }*/
 
 
 //    val cache = BitmapDiskCache(context)

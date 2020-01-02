@@ -9,4 +9,6 @@ class VideoPostsViewModel @Inject constructor(val repository: VideoPostRepositor
 
     val posts = repository.posts
 
+
+
 }
