@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.randomly.videos.R
 import com.randomly.videos.data.Result
@@ -20,6 +21,7 @@ import com.randomly.videos.ui.hide
 import com.randomly.videos.ui.show
 import javax.inject.Inject
 
+
 class VideoPostsFragment : Fragment(), Injectable {
 
     @Inject
@@ -29,6 +31,12 @@ class VideoPostsFragment : Fragment(), Injectable {
     private lateinit var binding: FragmentRepoBinding
     private lateinit var adapter: PostAdapter
 
+
+    var visibleItemCount: Int = 0
+    var totalItemCount: Int = 0
+    var pastVisiblesItems: Int = 0
+
+    var loading: Boolean = true
     private val COLUMN_COUNT = 2
 
     companion object {
@@ -51,6 +59,25 @@ class VideoPostsFragment : Fragment(), Injectable {
         binding.rvRepos.layoutManager = layoutManager
         binding.rvRepos.adapter = adapter
 
+
+        binding.rvRepos.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+
+                if (dy > 0) //check for scroll down
+                {
+                    visibleItemCount = layoutManager.getChildCount()
+                    totalItemCount = layoutManager.getItemCount()
+                    pastVisiblesItems = layoutManager.findFirstVisibleItemPosition()
+                    if (loading) {
+                        if (visibleItemCount + pastVisiblesItems >= totalItemCount) {
+                            loading = false
+
+
+                        }
+                    }
+                }
+            }
+        })
 
         subscribeUi(binding, adapter)
         setHasOptionsMenu(true)
