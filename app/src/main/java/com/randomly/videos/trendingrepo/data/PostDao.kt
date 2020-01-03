@@ -16,7 +16,7 @@ interface PostDao {
     suspend fun insertAll(posts: List<Post>)
 
 
-    @Query("DELETE FROM posts")
-    suspend fun nukeTable()
+    @Query("DELETE  FROM posts")
+    fun nukeTable()
 
 }

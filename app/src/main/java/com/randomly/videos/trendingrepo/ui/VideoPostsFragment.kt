@@ -132,19 +132,19 @@ class VideoPostsFragment : Fragment(), Injectable {
         when (item.itemId) {
             R.id.m_date -> {
 
-                viewModel.sort(BY_DATE)
+                adapter.sort(BY_DATE)
 
             }
             R.id.m_likes -> {
 
-                viewModel.sort(BY_LIKES)
+                adapter.sort(BY_LIKES)
             }
             R.id.m_share -> {
 
-                viewModel.sort(BY_SHARES)
+                adapter.sort(BY_SHARES)
             }
             R.id.m_views -> {
-                viewModel.sort(BY_VIEWS)
+                adapter.sort(BY_VIEWS)
 
             }
         }

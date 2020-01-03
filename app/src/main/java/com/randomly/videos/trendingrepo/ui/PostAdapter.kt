@@ -39,6 +39,8 @@ class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapte
         holder.apply {
             bind(createOnClickListener(post, holder.binding), post)
             itemView.tag = post
+
+
         }
     }
 
@@ -46,13 +48,61 @@ class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapte
                                       binding: ListItemRepoBinding): View.OnClickListener {
 
         return View.OnClickListener {
-/*
-            activity.supportFragmentManager.beginTransaction().replace(R.id.fl_fragment,
-                    RepoDetailFragment.getInstance(user))
-                    .addToBackStack(null)
-                    .commit()*/
+            /*
+                        activity.supportFragmentManager.beginTransaction().replace(R.id.fl_fragment,
+                                RepoDetailFragment.getInstance(user))
+                                .addToBackStack(null)
+                                .commit()*/
 
         }
+    }
+
+
+    fun sort(sortBy: Int) {
+
+        when (sortBy) {
+            VideoPostsFragment.BY_DATE -> {
+
+                val list = currentList.toMutableList()
+
+
+                list.sortByDescending { it.eventDate }
+
+                submitList(list)
+            }
+            VideoPostsFragment.BY_LIKES -> {
+
+                val list = currentList.toMutableList()
+
+
+                list.sortByDescending { it.likes }
+
+                submitList(list)
+            }
+            VideoPostsFragment.BY_SHARES -> {
+
+                val list = currentList.toMutableList()
+
+
+                list.sortByDescending { it.shares }
+
+                submitList(list)
+
+
+            }
+            VideoPostsFragment.BY_VIEWS -> {
+
+                val list = currentList.toMutableList()
+
+
+                list.sortByDescending { it.views }
+
+                submitList(list)
+
+
+            }
+        }
+
     }
 }
 
