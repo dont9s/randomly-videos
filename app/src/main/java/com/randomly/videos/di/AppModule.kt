@@ -1,6 +1,7 @@
 package com.randomly.videos.di
 
 import android.app.Application
+import com.randomly.videos.App
 import com.randomly.videos.api.AuthInterceptor
 import com.randomly.videos.api.RandmolyApiSerivice
 import com.randomly.videos.data.AppDatabase
@@ -60,7 +61,7 @@ class AppModule {
     }
 
     private fun <T> provideService(okhttpClient: OkHttpClient,
-            converterFactory: GsonConverterFactory, clazz: Class<T>): T {
+                                   converterFactory: GsonConverterFactory, clazz: Class<T>): T {
         return createRetrofit(okhttpClient, converterFactory).create(clazz)
     }
 

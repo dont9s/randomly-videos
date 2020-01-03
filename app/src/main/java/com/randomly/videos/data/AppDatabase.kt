@@ -10,6 +10,7 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.randomly.videos.trendingrepo.data.*
 import com.randomly.videos.worker.SeedDatabaseWorker
+import javax.inject.Inject
 
 /**
  * The Room database for this app
@@ -19,6 +20,7 @@ import com.randomly.videos.worker.SeedDatabaseWorker
     Post::class],
         version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
+
 abstract class AppDatabase : RoomDatabase() {
 
 

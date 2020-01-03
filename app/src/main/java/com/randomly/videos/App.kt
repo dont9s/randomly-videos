@@ -16,8 +16,16 @@ class App : Application(), HasActivityInjector {
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
 
+   companion object{
+       lateinit var instance : App
+   }
+
+
+
     override fun onCreate() {
         super.onCreate()
+
+        instance = this
 
         if (BuildConfig.DEBUG) Stetho.initializeWithDefaults(this)
 

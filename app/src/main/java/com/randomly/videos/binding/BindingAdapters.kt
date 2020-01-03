@@ -1,18 +1,14 @@
 package com.randomly.videos.binding
 
-import android.graphics.BitmapFactory
 import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
+import androidx.lifecycle.LiveData
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.randomly.videos.data.AppDatabase
-import com.randomly.videos.trendingrepo.data.Image
-import com.randomly.videos.util.Utils
-import kotlinx.coroutines.*
 
 
 @BindingAdapter("isGone")

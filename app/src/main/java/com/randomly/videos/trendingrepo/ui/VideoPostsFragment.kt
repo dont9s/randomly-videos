@@ -2,9 +2,7 @@ package com.randomly.videos.trendingrepo.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +24,8 @@ class VideoPostsFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
+
     private lateinit var viewModel: VideoPostsViewModel
     private lateinit var layoutManager: GridLayoutManager
     private lateinit var binding: FragmentRepoBinding
@@ -36,13 +36,23 @@ class VideoPostsFragment : Fragment(), Injectable {
     var totalItemCount: Int = 0
     var pastVisiblesItems: Int = 0
 
-    var loading: Boolean = true
+
     private val COLUMN_COUNT = 2
 
     companion object {
         fun getInstance() = VideoPostsFragment()
+        const val BY_DATE = 0
+        const val BY_LIKES = 1
+        const val BY_SHARES = 2
+        const val BY_VIEWS = 3
     }
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -65,13 +75,14 @@ class VideoPostsFragment : Fragment(), Injectable {
 
                 if (dy > 0) //check for scroll down
                 {
-                    visibleItemCount = layoutManager.getChildCount()
-                    totalItemCount = layoutManager.getItemCount()
+                    visibleItemCount = layoutManager.childCount
+                    totalItemCount = layoutManager.itemCount
                     pastVisiblesItems = layoutManager.findFirstVisibleItemPosition()
-                    if (loading) {
+                    if (viewModel.loading) {
                         if (visibleItemCount + pastVisiblesItems >= totalItemCount) {
-                            loading = false
+                            viewModel.loading = false
 
+                            viewModel.loadMore()
 
                         }
                     }
@@ -104,6 +115,41 @@ class VideoPostsFragment : Fragment(), Injectable {
                 }
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+
+
+        inflater.inflate(R.menu.menu_sort, menu)
+
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+
+        when (item.itemId) {
+            R.id.m_date -> {
+
+                viewModel.sort(BY_DATE)
+
+            }
+            R.id.m_likes -> {
+
+                viewModel.sort(BY_LIKES)
+            }
+            R.id.m_share -> {
+
+                viewModel.sort(BY_SHARES)
+            }
+            R.id.m_views -> {
+                viewModel.sort(BY_VIEWS)
+
+            }
+        }
+
+        return true
     }
 
 }
