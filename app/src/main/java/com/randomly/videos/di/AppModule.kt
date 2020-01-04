@@ -1,7 +1,6 @@
 package com.randomly.videos.di
 
 import android.app.Application
-import com.randomly.videos.App
 import com.randomly.videos.api.AuthInterceptor
 import com.randomly.videos.api.RandmolyApiSerivice
 import com.randomly.videos.data.AppDatabase
@@ -41,7 +40,7 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideTrendingRepoDao(db: AppDatabase) = db.trendingRepoDao()
+    fun providePostDao(db: AppDatabase) = db.postDao()
 
 
     @CoroutineScropeIO

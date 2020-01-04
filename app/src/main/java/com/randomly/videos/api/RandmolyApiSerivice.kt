@@ -1,12 +1,9 @@
 package com.randomly.videos.api
 
-import com.randomly.videos.trendingrepo.data.Post
-import com.randomly.videos.trendingrepo.data.User
 import com.randomly.videos.trendingrepo.data.VideoDataResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 /**
  * Repo REST API access points

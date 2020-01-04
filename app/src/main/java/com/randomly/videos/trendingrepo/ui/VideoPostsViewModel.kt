@@ -1,12 +1,9 @@
 package com.randomly.videos.trendingrepo.ui
 
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import com.randomly.videos.App
 import com.randomly.videos.api.RandmolyApiSerivice
 import com.randomly.videos.data.AppDatabase
-import com.randomly.videos.trendingrepo.data.Post
 import com.randomly.videos.trendingrepo.data.VideoPostRepository
 import com.randomly.videos.util.pageMap
 import kotlinx.coroutines.Dispatchers
@@ -44,7 +41,7 @@ class VideoPostsViewModel @Inject constructor(val repository: VideoPostRepositor
 
                 val database = AppDatabase.getInstance(getApplication())
 
-                posts?.let { database.trendingRepoDao().insertAll(it) }
+                posts?.let { database.postDao().insertAll(it) }
 
                 loading = true
 

@@ -7,17 +7,14 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.randomly.videos.repodetail.ui.RepoDetailFragment
-import com.randomly.videos.R
-import com.randomly.videos.databinding.ListItemRepoBinding
+import com.randomly.videos.databinding.ListItemPostBinding
 import com.randomly.videos.trendingrepo.data.Post
-import com.randomly.videos.trendingrepo.data.User
 
 class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapter.ViewHolder>(DiffCallback()) {
 
 
     class ViewHolder(
-            val binding: ListItemRepoBinding
+            val binding: ListItemPostBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(listener: View.OnClickListener, item: Post) {
@@ -30,7 +27,7 @@ class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ListItemRepoBinding.inflate(
+        return ViewHolder(ListItemPostBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false))
     }
 
@@ -45,14 +42,10 @@ class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapte
     }
 
     private fun createOnClickListener(post: Post,
-                                      binding: ListItemRepoBinding): View.OnClickListener {
+                                      binding: ListItemPostBinding): View.OnClickListener {
 
         return View.OnClickListener {
-            /*
-                        activity.supportFragmentManager.beginTransaction().replace(R.id.fl_fragment,
-                                RepoDetailFragment.getInstance(user))
-                                .addToBackStack(null)
-                                .commit()*/
+
 
         }
     }

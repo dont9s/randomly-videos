@@ -3,6 +3,7 @@ package com.randomly.videos.trendingrepo.data
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.randomly.videos.util.Utils
 import java.io.Serializable
 
 
@@ -30,5 +31,7 @@ data class Post(
 
 
     override fun toString() = id + likes + eventDate
+
+    fun getFormattedDate() = eventDate?.let { Utils.convertLongToTime(it) }
 
 }

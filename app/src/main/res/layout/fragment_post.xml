@@ -16,7 +16,7 @@
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:context=".MainActivity"
-            tools:listitem="@layout/list_item_repo" />
+            tools:listitem="@layout/list_item_post" />
 
 
         <com.facebook.shimmer.ShimmerFrameLayout

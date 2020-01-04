@@ -33,7 +33,7 @@
 
 
             <ImageView
-                android:id="@+id/iv_repo"
+                android:id="@+id/iv_post"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
@@ -48,28 +48,54 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/username"
+                    android:id="@+id/eventname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_normal"
                     android:gravity="center"
                     android:text="@{post.eventName}"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textColor="@color/white"
-                    tools:text="Super Heroes" />
+                    android:textColor="@color/white" />
 
 
                 <TextView
-                    android:id="@+id/repo_name"
+                    android:id="@+id/event_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/margin_normal"
                     android:gravity="center"
-                    android:text="@{post.eventDate.toString()}"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textColor="@color/white"
-                    tools:text="Super Heroes" />
+                    android:text="@{post.formattedDate}"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/views"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_normal"
+                    android:gravity="center"
+                    android:text="@{String.format(@string/post_views, post.views)}"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/shares"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_normal"
+                    android:gravity="center"
+                    android:text="@{String.format(@string/post_share, post.shares)}"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/likes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_normal"
+                    android:gravity="center"
+                    android:text="@{String.format(@string/post_like, post.likes)}"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
 

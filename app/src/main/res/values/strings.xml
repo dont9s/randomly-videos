@@ -4,5 +4,9 @@
     <string name="app_name" translatable="false">Randomly Videos</string>
 
 
+    <string name="post_lable">Post name %s</string>
 
+    <string name="post_like">Likes : %d</string>
+    <string name="post_share">Shares : %d</string>
+    <string name="post_views">Views : %d</string>
 </resources>

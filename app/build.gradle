@@ -8,10 +8,6 @@ apply plugin: 'kotlin-allopen'
 apply plugin: 'io.fabric'
 
 
-allOpen {
-    // allows mocking for classes w/o directly opening them for release builds
-    annotation 'com.randomly.videos.testing.OpenClass'
-}
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -20,7 +16,6 @@ android {
         applicationId "com.randomly.videos"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        testInstrumentationRunner "com.randomly.videos.util.AppTestRunner"
         versionCode 1
         versionName "1"
         vectorDrawables.useSupportLibrary true

@@ -16,7 +16,7 @@ import javax.inject.Inject
  * The Room database for this app
  */
 @Database(entities = [
-    User::class, Image::class,
+    Image::class,
     Post::class],
         version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
@@ -24,7 +24,7 @@ import javax.inject.Inject
 abstract class AppDatabase : RoomDatabase() {
 
 
-    abstract fun trendingRepoDao(): PostDao
+    abstract fun postDao(): PostDao
     abstract fun imageDao(): ImageDao
 
     companion object {

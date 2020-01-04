@@ -1,7 +1,6 @@
 package com.randomly.videos.trendingrepo.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.randomly.videos.R
 import com.randomly.videos.data.Result
-import com.randomly.videos.databinding.FragmentRepoBinding
+import com.randomly.videos.databinding.FragmentPostBinding
 import com.randomly.videos.di.Injectable
 import com.randomly.videos.di.injectViewModel
 import com.randomly.videos.ui.GridItemDecoration
@@ -28,7 +27,7 @@ class VideoPostsFragment : Fragment(), Injectable {
 
     private lateinit var viewModel: VideoPostsViewModel
     private lateinit var layoutManager: GridLayoutManager
-    private lateinit var binding: FragmentRepoBinding
+    private lateinit var binding: FragmentPostBinding
     private lateinit var adapter: PostAdapter
 
 
@@ -58,7 +57,7 @@ class VideoPostsFragment : Fragment(), Injectable {
 
         viewModel = injectViewModel(viewModelFactory)
 
-        binding = FragmentRepoBinding.inflate(inflater, container, false)
+        binding = FragmentPostBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
         adapter = PostAdapter(activity!!)
@@ -98,7 +97,7 @@ class VideoPostsFragment : Fragment(), Injectable {
     }
 
 
-    private fun subscribeUi(binding: FragmentRepoBinding, adapter: PostAdapter) {
+    private fun subscribeUi(binding: FragmentPostBinding, adapter: PostAdapter) {
         viewModel.posts.observe(viewLifecycleOwner, Observer { result ->
 
 
