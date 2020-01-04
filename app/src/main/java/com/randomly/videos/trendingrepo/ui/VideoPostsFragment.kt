@@ -40,6 +40,7 @@ class VideoPostsFragment : Fragment(), Injectable {
 
     companion object {
         fun getInstance() = VideoPostsFragment()
+        const val BY_NONE = -1
         const val BY_DATE = 0
         const val BY_LIKES = 1
         const val BY_SHARES = 2
@@ -60,13 +61,15 @@ class VideoPostsFragment : Fragment(), Injectable {
         binding = FragmentPostBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        adapter = PostAdapter(activity!!)
+        adapter = PostAdapter()
         layoutManager = GridLayoutManager(context, COLUMN_COUNT)
 
         binding.rvRepos.addItemDecoration(
                 GridItemDecoration(resources.getDimension(R.dimen.dimen_20).toInt(), true))
         binding.rvRepos.layoutManager = layoutManager
         binding.rvRepos.adapter = adapter
+
+
 
 
         binding.rvRepos.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -106,6 +109,7 @@ class VideoPostsFragment : Fragment(), Injectable {
                     binding.loadingShimmer.hide()
 
                     result.data?.let { adapter.submitList(it) }
+                    adapter.sort(viewModel.currentOrder)
                 }
                 Result.Status.LOADING -> binding.loadingShimmer.show()
                 Result.Status.ERROR -> {
@@ -132,18 +136,22 @@ class VideoPostsFragment : Fragment(), Injectable {
             R.id.m_date -> {
 
                 adapter.sort(BY_DATE)
+                viewModel.currentOrder = BY_DATE
 
             }
             R.id.m_likes -> {
 
                 adapter.sort(BY_LIKES)
+                viewModel.currentOrder = BY_LIKES
             }
             R.id.m_share -> {
 
                 adapter.sort(BY_SHARES)
+                viewModel.currentOrder = BY_SHARES
             }
             R.id.m_views -> {
                 adapter.sort(BY_VIEWS)
+                viewModel.currentOrder = BY_VIEWS
 
             }
         }

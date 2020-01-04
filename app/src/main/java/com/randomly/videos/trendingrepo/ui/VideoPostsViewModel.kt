@@ -1,5 +1,6 @@
 package com.randomly.videos.trendingrepo.ui
 
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.randomly.videos.App
 import com.randomly.videos.api.RandmolyApiSerivice
@@ -9,6 +10,7 @@ import com.randomly.videos.util.pageMap
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import java.lang.Exception
 import javax.inject.Inject
 
 
@@ -23,6 +25,8 @@ class VideoPostsViewModel @Inject constructor(val repository: VideoPostRepositor
 
     val posts = repository.posts
 
+    var currentOrder: Int = VideoPostsFragment.BY_NONE
+
     fun loadMore() {
 
 
@@ -31,29 +35,35 @@ class VideoPostsViewModel @Inject constructor(val repository: VideoPostRepositor
         if (currentPage >= pageMap.size)
             return
 
-        runBlocking(Dispatchers.IO) {
-            val response = async { pageMap[currentPage]?.let { service.getVideoPosts(it) } }
 
-            val result = response.await()
+        try {
+            runBlocking(Dispatchers.IO) {
+                val response = async { pageMap[currentPage]?.let { service.getVideoPosts(it) } }
 
-            if (result?.isSuccessful!!) {
-                val posts = result.body()?.postList
 
-                val database = AppDatabase.getInstance(getApplication())
+                val result = response.await()
 
-                posts?.let { database.postDao().insertAll(it) }
+                if (result?.isSuccessful!!) {
+                    val posts = result.body()?.postList
 
-                loading = true
+                    val database = AppDatabase.getInstance(getApplication())
 
-            } else {
+                    posts?.let { database.postDao().insertAll(it) }
+
+                    loading = true
+
+                } else {
+
+
+                }
+
 
             }
+        } catch (e: Exception) {
 
         }
 
     }
-
-
 
 
 }

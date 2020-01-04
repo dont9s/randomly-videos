@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this,
                 R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().add(R.id.fl_fragment,
+        supportFragmentManager.beginTransaction().replace(R.id.fl_fragment,
                 VideoPostsFragment.getInstance())
                 .commit()
 

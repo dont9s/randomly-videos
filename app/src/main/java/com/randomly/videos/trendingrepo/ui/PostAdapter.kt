@@ -3,14 +3,13 @@ package com.randomly.videos.trendingrepo.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.randomly.videos.databinding.ListItemPostBinding
 import com.randomly.videos.trendingrepo.data.Post
 
-class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapter.ViewHolder>(DiffCallback()) {
+class PostAdapter() : ListAdapter<Post, PostAdapter.ViewHolder>(DiffCallback()) {
 
 
     class ViewHolder(
@@ -22,6 +21,7 @@ class PostAdapter(val activity: FragmentActivity) : ListAdapter<Post, PostAdapte
                 clickListener = listener
                 post = item
                 executePendingBindings()
+
             }
         }
     }
